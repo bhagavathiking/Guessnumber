@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>GAME </title>
+   <link rel="icon" href="car.gif">
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div class="main">
+   <h1>Guess the number correct</h1>
+   <input type="number" id="num1"> <br>
+   <button onclick="win()">GUESS</button>
+   <div class="result">
+   <p id="point">Score : 0</p>
+   <p id="result">YOU WIN OR LOSE</p>
+   </div>
+   </div>
+   <script>
+      var num1 = document.getElementById("num1")
+      var you = document.getElementById("result")
+      var score = document.getElementById("point")
+      var tot = 0
+
+      function win() {
+         var ran = Math.floor(Math.random() * 10) + 1
+         var mynum = num1.value
+         if (mynum == ran) {
+            tot = tot + 1
+            you.textContent = "You win"
+            score.textContent = "score :" + tot
+         }
+         else {
+            you.textContent = "you lose"
+         }
+      }
+
+
+   </script>
+
+</body>
+
+</html>
